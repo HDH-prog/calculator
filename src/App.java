@@ -21,6 +21,8 @@ public class App {
             System.out.print("사칙연산 기호를 입력하세요((+, -, *, /): ");
             char operator = sc.next().charAt(0);
 
+            String input = "";
+
             // Calculator의 calculate 메서드로 연산자 처리
             try {
                 double result = calculator.calculate(num1, num2, operator);
@@ -28,15 +30,15 @@ public class App {
 
                 // remove 입력 시 첫 번째 연산 결과 제거
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
-                String input = sc.next();
+                input = sc.next();
                 if (input.equals("remove")) {
-                    calculator.results.remove(0);
+                    calculator.getResults().remove(0);
                 }
                 // inquiry 입력 시 연산 결과 반환
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 input = sc.next();
                 if (input.equals("inquiry")) {
-                    for (double i : calculator.results) {
+                    for (double i : calculator.getResults()) {
                         System.out.print(i + ", ");
                     }
                 }
@@ -46,7 +48,7 @@ public class App {
 
             // exit 전까지 연산 반복
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String input = sc.next();
+            input = sc.next();
             if (input.equals("exit")) {
                 System.out.println("계산기를 종료합니다.");
                 break;
