@@ -51,4 +51,11 @@ public class Calculator {
         results.remove(0);
         System.out.println("삭제되었습니다.");
     }
+
+    // inquiry 메서드
+    public void inquiryResults() {
+        for (Double i : results) {
+            System.out.println(i);
+        }
+    }
 }

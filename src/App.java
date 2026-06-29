@@ -38,9 +38,7 @@ public class App {
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 input = sc.next();
                 if (input.equals("inquiry")) {
-                    for (double i : calculator.getResults()) {
-                        System.out.print(i + ", ");
-                    }
+                    calculator.inquiryResults();
                 }
             } catch (ArithmeticException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
