@@ -32,7 +32,7 @@ public class App {
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 input = sc.next();
                 if (input.equals("remove")) {
-                    calculator.getResults().remove(0);
+                    calculator.removeResults();
                 }
                 // inquiry 입력 시 연산 결과 반환
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");

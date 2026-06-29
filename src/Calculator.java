@@ -45,4 +45,10 @@ public class Calculator {
     public void setResults(List<Double> results) {
         this.results = results;
     }
+
+    // remove 메서드
+    public void removeResults() {
+        results.remove(0);
+        System.out.println("삭제되었습니다.");
+    }
 }
