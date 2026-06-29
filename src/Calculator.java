@@ -6,6 +6,11 @@ public class Calculator {
     // 컬렉션 타입 필드
     private List<Double> results = new ArrayList<>();
 
+    // 생성자
+    public Calculator() {
+        this.results = new ArrayList<>();
+    }
+
     // 사칙연산 메서드
     public double calculate(int num1, int num2, char operator) {
 
