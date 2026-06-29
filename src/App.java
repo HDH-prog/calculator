@@ -1,10 +1,12 @@
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
 
-        // 반복 연산 위해 배열 생성
-        double[] results = new double[10];
+        // 반복 연산 위해 컬렉션(리스트) 사용
+        List<Double> results = new ArrayList<>();
         int count = 0;
 
         Scanner sc = new Scanner(System.in);
@@ -51,13 +53,23 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            // 반복 연산 계산
-            results[count] = result;
-            count++;
+            // 연산 결과 리스트에 저장
+            results.add(result);
+
+            // remove 입력 시 첫 번째 연산 결과 제거
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String input = sc.next();
+            if (input.equals("remove")) {
+                results.remove(0);
+            }
+//            // inquiry 입력 시 연산 결과 반환
+//            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+
+
 
             // exit 전까지 연산 반복
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String input = sc.next();
+            input = sc.next();
             if (input.equals("exit")) {
                 System.out.println("계산기를 종료합니다.");
                 break;
