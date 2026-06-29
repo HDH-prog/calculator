@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Calculator {
 
     // 컬렉션 타입 필드
-    List<Double> results = new ArrayList<>();
+    private List<Double> results = new ArrayList<>();
 
     // 사칙연산 메서드
     public double calculate(int num1, int num2, char operator) {
@@ -34,5 +34,15 @@ public class Calculator {
         // 연산 결과
         results.add(result);
         return result;
+    }
+
+    // Getter
+    public List<Double> getResults() {
+        return results;
+    }
+
+    // Setter
+    public void setResults(List<Double> results) {
+        this.results = results;
     }
 }
