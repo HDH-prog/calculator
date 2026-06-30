@@ -10,18 +10,36 @@ public class App {
 
         while (true) {
 
-            // 양의 정수 2개를 입력
-            System.out.print("첫 번째 숫자를 입력하세요(양의 정수): ");
-            int num1 = sc.nextInt();
 
-            System.out.print("두 번째 숫자를 입력하세요(양의 정수): ");
-            int num2 = sc.nextInt();
+            // 사칙연산 | 원 넓이
+            System.out.println("어떤 기능을 사용하시겠습니까? (calc: 사칙연산, circle: 원의 넓이)");
+            String mode = sc.next();
 
-            // 사칙연산 기호 타입 변수에 저장
-            System.out.print("사칙연산 기호를 입력하세요((+, -, *, /): ");
-            char operator = sc.next().charAt(0);
+            if (mode.equals("circle")) {
+                System.out.print("원의 반지름을 입력하세요: ");
+                double radius = sc.nextDouble();
 
-            String input = "";
+                double area = calculator.calculateCircleArea(radius);
+                System.out.println("원의 넓이: " + area);
+
+                System.out.println("저장된 원의 넓이 결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+                String input = sc.next();
+                if (input.equals("inquiry")) {
+                    calculator.inquiryCircleAreaResults();
+                }
+
+            } else if (mode.equals("calc")) {
+                // 기존 사칙연산 분기
+                System.out.print("첫 번째 숫자를 입력하세요(양의 정수): ");
+                int num1 = sc.nextInt();
+
+                System.out.print("두 번째 숫자를 입력하세요(양의 정수): ");
+                int num2 = sc.nextInt();
+
+                System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
+                char operator = sc.next().charAt(0);
+
+                String input = "";
 
             // Calculator의 calculate 메서드로 연산자 처리
             try {
@@ -53,4 +71,4 @@ public class App {
             }
         }
     }
-}
+}}

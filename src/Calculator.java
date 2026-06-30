@@ -3,8 +3,11 @@ import java.util.ArrayList;
 
 public class Calculator {
 
+    public static final double PI = 3.14159;
+
     // 컬렉션 타입 필드
     private List<Double> results = new ArrayList<>();
+    private List<Double> circleAreaResults;
 
     // 생성자
     public Calculator() {
@@ -61,6 +64,34 @@ public class Calculator {
     public void inquiryResults() {
         for (Double i : results) {
             System.out.println(i);
+        }
+    }
+
+    // 원의 넓이 계산 메서드: 반지름을 받아 넓이 계산 후 결과 저장
+    public double calculateCircleArea(double radius) {
+        double area = PI * radius * radius;
+        circleAreaResults.add(area);
+        return area;
+    }
+
+    // 원의 넓이 결과 Getter
+    public List<Double> getCircleAreaResults() {
+        return circleAreaResults;
+    }
+
+    // 원의 넓이 결과 Setter
+    public void setCircleAreaResults(List<Double> circleAreaResults) {
+        this.circleAreaResults = circleAreaResults;
+    }
+
+    // 원의 넓이 결과 전체 조회
+    public void inquiryCircleAreaResults() {
+        if (circleAreaResults.isEmpty()) {
+            System.out.println("저장된 원의 넓이 결과가 없습니다.");
+        } else {
+            for (Double area : circleAreaResults) {
+                System.out.println(area);
+            }
         }
     }
 }
